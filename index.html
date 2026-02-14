@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Lada Will You Be My Valentine?</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,9 +15,190 @@
             <button class="no-button" onclick="handleNoClick()">No</button>
         </div>
         <div class="gif_container">
+=======
+    <title>Will You Be My Valentine?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="bg-glow"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true"></div>
+    <canvas class="starfield" id="starfield" aria-hidden="true"></canvas>
+    <div class="orbit-scene" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+        <span class="orb orb-4"></span>
+        <span class="ring ring-1"></span>
+        <span class="ring ring-2"></span>
+    </div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <main class="container" id="tiltCard">
+        <header class="hero">
+            <p class="subtitle">For my favorite person, Lada</p>
+            <h1>Will you be my Valentine, Lada?</h1>
+            <p class="tagline">— from Youssef, counting the days until March 11 in Egypt</p>
+            <div class="hero-meta">
+                <span class="pill">Reunion: March 11</span>
+                <span class="pill">Destination: Egypt</span>
+            </div>
+        </header>
+
+        <section class="cta reveal">
+            <div class="buttons">
+                <button class="yes-button" onclick="handleYesClick()">Yes</button>
+                <button class="no-button" onclick="handleNoClick()">No</button>
+            </div>
+            <p id="messageDisplay" class="small-message">Long distance is hard, but you make every day feel like a celebration. 💖</p>
+        </section>
+
+        <section class="countdown reveal" aria-live="polite">
+            <div class="countdown-header">
+                <h2>Countdown to our hug</h2>
+                <p>March 11, 2026 • Egypt</p>
+            </div>
+            <div class="countdown-grid" id="countdownGrid">
+                <div class="countdown-card">
+                    <span id="days">00</span>
+                    <label>Days</label>
+                </div>
+                <div class="countdown-card">
+                    <span id="hours">00</span>
+                    <label>Hours</label>
+                </div>
+                <div class="countdown-card">
+                    <span id="minutes">00</span>
+                    <label>Minutes</label>
+                </div>
+                <div class="countdown-card">
+                    <span id="seconds">00</span>
+                    <label>Seconds</label>
+                </div>
+            </div>
+            <p class="countdown-note" id="countdownNote">Counting every heartbeat until you arrive.</p>
+        </section>
+
+        <section class="stats reveal">
+            <h2>Love signal</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Love frequency</span>
+                    <div class="pulse-bar">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Patience level</span>
+                    <div class="progress" aria-hidden="true">
+                        <span class="progress-fill" style="width: 92%;"></span>
+                    </div>
+                    <span class="stat-value">92%</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Love intensity</span>
+                    <div class="heart-meter">
+                        <span class="heart-dot"></span>
+                        <span class="heart-dot"></span>
+                        <span class="heart-dot"></span>
+                        <span class="heart-dot"></span>
+                        <span class="heart-dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="details reveal">
+            <div class="detail-card">
+                <h2>Our reunion plan (March 11)</h2>
+                <ul>
+                    <li>Welcome hug at the airport</li>
+                    <li>Cozy dinner + your favorite dessert</li>
+                    <li>Little walk under the city lights in Egypt</li>
+                </ul>
+            </div>
+            <div class="detail-card">
+                <h2>Reasons I adore you</h2>
+                <ul>
+                    <li>Your smile makes everything better</li>
+                    <li>You’re my calm and my joy</li>
+                    <li>You make ordinary moments magical</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline reveal">
+            <h2>Our story in moments</h2>
+            <div class="timeline-track">
+                <div class="timeline-item">
+                    <span class="dot"></span>
+                    <div>
+                        <h3>First hello</h3>
+                        <p>When a simple conversation became my favorite daily ritual.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="dot"></span>
+                    <div>
+                        <h3>Long‑distance days</h3>
+                        <p>Calls, playlists, and little surprises that keep us close.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="dot"></span>
+                    <div>
+                        <h3>March 11</h3>
+                        <p>The moment distance turns into a kiss.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="love-notes reveal">
+            <h2>Love note for Lada</h2>
+            <p>Thank you for being my favorite person, my best friend, and my home. Distance can’t change how much I love you—I choose you today and every day.</p>
+        </section>
+
+        <section class="love-letter reveal" aria-live="polite">
+            <div class="letter-header">
+                <h2>Open my letter</h2>
+                <button class="ghost-button" id="letterToggle" type="button">Open letter</button>
+            </div>
+            <div class="letter-card" id="letterContent" aria-hidden="true">
+                <p>
+                    Lada, every day apart makes me love you more. I’m counting the moments until I can hold your hand in Egypt.
+                    You are my peace, my laughter, and my forever.
+                </p>
+                <p class="signature">— Youssef</p>
+            </div>
+        </section>
+
+        <section class="wish-jar reveal" aria-live="polite">
+            <div class="wish-header">
+                <h2>Wish jar</h2>
+                <button class="ghost-button" id="wishButton" type="button">Pick a wish</button>
+            </div>
+            <p class="wish-text" id="wishText">Click “Pick a wish” for a sweet moment.</p>
+            <button class="ghost-button heart-send" id="heartSend" type="button">Send a heart</button>
+        </section>
+
+        <section class="quotes reveal" aria-live="polite">
+            <h2>Cosmic vows</h2>
+            <p class="quote-text" id="quoteText">“I’ll love you in every timezone.”</p>
+        </section>
+
+        <div class="gif_container reveal">
+>>>>>>> 17e5c0b (a)
             <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
         </div>
-    </div>
+
+        <footer class="footer">Happy Valentine’s Day 2026 • With love, Youssef</footer>
+    </main>
+
+    <div id="heartsContainer" class="floating-hearts" aria-hidden="true"></div>
     <script src="script.js"></script>
 </body>
 </html>

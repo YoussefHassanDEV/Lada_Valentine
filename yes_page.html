@@ -4,14 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knew you would say yes!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./yes_style.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="header_text">Knew you would say yes!</h1>
-        <div class="gif_container">
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
-        </div>
+    <div class="confetti" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true"></div>
+    <div class="orbit-scene" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+        <span class="orb orb-4"></span>
+        <span class="ring ring-1"></span>
+        <span class="ring ring-2"></span>
     </div>
+    <div class="cursor-glow" id="cursorGlowYes" aria-hidden="true"></div>
+    <main class="container" id="tiltCardYes">
+        <h1 class="header_text">She said yes! 💘</h1>
+        <p class="sub_text">Happy Valentine’s Day, Lada — love, Youssef. See you in Egypt on March 11!</p>
+
+        <section class="highlight">
+            <h2>Our reunion celebration</h2>
+            <div class="plan">
+                <div>
+                    <h3>Sweet moments</h3>
+                    <p>Flowers, dessert, and a cozy dinner just for us.</p>
+                </div>
+                <div>
+                    <h3>Memories</h3>
+                    <p>Photos, laughter, and a reminder of how far we’ve come in long distance.</p>
+                </div>
+                <div>
+                    <h3>Promise</h3>
+                    <p>More dates, more adventures, more you + me in Egypt.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="love-letter">
+            <div class="letter-header">
+                <h2>Promise for Lada</h2>
+            </div>
+            <div class="letter-card open">
+                <p>I promise to keep choosing you, to be gentle with your heart, and to celebrate every little moment together.</p>
+                <p class="signature">— Youssef</p>
+            </div>
+        </section>
+
+        <div class="gif_container">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif" alt="Happy dance GIF">
+        </div>
+
+        <p class="closing">You’re my favorite hello and my hardest goodbye—until March 11. 💖</p>
+    </main>
+    <script>
+        const yesGlow = document.getElementById("cursorGlowYes");
+        const tiltCardYes = document.getElementById("tiltCardYes");
+        let yesRafId = null;
+        let lastYesEvent = null;
+
+        function handleYesTilt(event) {
+            lastYesEvent = event;
+            if (yesRafId) return;
+            yesRafId = requestAnimationFrame(() => {
+                yesRafId = null;
+                if (!tiltCardYes || !lastYesEvent) return;
+                const rect = tiltCardYes.getBoundingClientRect();
+                const x = (lastYesEvent.clientX - rect.left) / rect.width - 0.5;
+                const y = (lastYesEvent.clientY - rect.top) / rect.height - 0.5;
+                const rotateX = (-y * 6).toFixed(2);
+                const rotateY = (x * 8).toFixed(2);
+                tiltCardYes.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+        }
+
+        function resetYesTilt() {
+            if (!tiltCardYes) return;
+            tiltCardYes.style.transform = "rotateX(0deg) rotateY(0deg)";
+        }
+
+        function moveYesGlow(event) {
+            lastYesEvent = event;
+            if (yesRafId) return;
+            yesRafId = requestAnimationFrame(() => {
+                yesRafId = null;
+                if (yesGlow && lastYesEvent) {
+                    yesGlow.style.left = `${lastYesEvent.clientX}px`;
+                    yesGlow.style.top = `${lastYesEvent.clientY}px`;
+                }
+            });
+        }
+
+        window.addEventListener("mousemove", moveYesGlow);
+        window.addEventListener("mousemove", handleYesTilt);
+        window.addEventListener("mouseleave", resetYesTilt);
+    </script>
 </body>
 </html>
